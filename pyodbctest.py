@@ -1,18 +1,16 @@
 import pyodbc
 
-for i in pyodbc.drivers():
-    print(i)
 
 
 class MSDBconnection():
 
     # Should establish connection with any DB we have in MSsql
-    def __init__(self, database = 'e-books_db',server = 'localhost',username = 'root',password = 'ssss'):
+    def __init__(self, database = 'books-db',server = 'localhost',username = 'root',password = 'ssss'):
         # 1) DB server connection variables
         self.server = server
         self.database = database
         self.username = username
-        self.password =  password
+        self.password = password
         self.conn = self._establish_connection()
         self.cur = self.conn.cursor()
 
