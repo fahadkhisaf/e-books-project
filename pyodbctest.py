@@ -32,3 +32,6 @@ nwind = MSDBconnection()
 
 results = nwind.sql_query("SELECT * FROM books")
 
+
+for i in results:
+    print(i)

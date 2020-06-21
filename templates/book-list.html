@@ -19,15 +19,14 @@
           </thead>
           <tbody>
             {% for row in list %}
-            {% set num = 0 %}
                 <tr>
                 {% for column in columns %}
 
-                   <td>{{ row[0][loop.index-1] }}</td>
-                    
+                   <td>{{ row[loop.index-1] }}</td>
+
                 {% endfor %}
                 </tr>
-             {% endfor %}
+            {% endfor %}
 
           </tbody>
         </table>

@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 nwind = MSDBconnection()
 results = nwind.sql_query("SELECT * FROM books")
-list=[results.fetchall()]
+
 columns=["ID","Title","Author","Pages","Language","Date Published"]
 posts = [
     {
@@ -35,7 +35,12 @@ posts = [
         'date_posted': '21 June, 2020'
     }
 ]
-
+# { %
+# for column in columns %}
+#
+# < td > {{row[0][loop.index - 1]}} < / td >
+#
+# { % endfor %}
 
 @app.route('/')
 @app.route('/home')
@@ -48,7 +53,7 @@ def about():
 
 @app.route('/book-list')
 def page2():
-    return render_template("book-list.html", list=list,columns=columns)
+    return render_template("book-list.html", list=results,columns=columns)
 
 @app.route('/add-book')
 def add_book():
