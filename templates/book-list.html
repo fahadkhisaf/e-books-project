@@ -6,6 +6,33 @@
         View Books
     </title>
     <div class="this">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Pages</th>
+              <th scope="col">Language</th>
+              <th scope="col">Date Published</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in list %}
+            {% set num = 0 %}
+                <tr>
+                {% for column in columns %}
+
+                   <td>{{ row[0][loop.index-1] }}</td>
+                    
+                {% endfor %}
+                </tr>
+             {% endfor %}
+
+          </tbody>
+        </table>
+
+
 
 
 

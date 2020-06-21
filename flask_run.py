@@ -7,8 +7,8 @@ app = Flask(__name__)
 
 nwind = MSDBconnection()
 results = nwind.sql_query("SELECT * FROM books")
-list=[results.fetchone()]
-
+list=[results.fetchall()]
+columns=["ID","Title","Author","Pages","Language","Date Published"]
 posts = [
     {
         'author': 'Ashraf Mohamud ',
@@ -48,7 +48,7 @@ def about():
 
 @app.route('/book-list')
 def page2():
-    return render_template("book-list.html", list=list)
+    return render_template("book-list.html", list=list,columns=columns)
 
 @app.route('/add-book')
 def add_book():
