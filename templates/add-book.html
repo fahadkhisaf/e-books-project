@@ -1,75 +1,38 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
+{% extends "layout.html" %}
+{% block content %}
     <title>Add Book</title>
-	  <link rel="stylesheet" href="static/css/style2.css">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/style2.css')  }}">
+    <link rel="stylesheet" href="static/css/style2.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')  }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-  </head>
-  <body>
-
-  	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-              <a class="navbar-brand" href="#">E-books DB</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="about">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="page2">List of E-books</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="add-book">Add books</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="1" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-              </div>
-            </nav>
-    <div class="banner-add-book">
-      <div class="container">
+    <div class="banner-add-book ">
+      <div class="container ">
         <form>
           <div class="row">
-          	<div class="col">
-              <label for="book-title">Book Title</label>
+          	<div class="col bg-secondary">
+              <label class="bg-secondary p-1 mt-2 color-white" for="book-title">Book Title</label>
 	            <input type="text" id="book-title" class="form-control" placeholder="Title">
 	          </div>
           </div>
 	      <div class="row">
 	        <div class="col">
-            <label for="book-author">Author</label>
+            <label class="mt-2" for="book-author">Author</label>
 	          <input type="text" id="book-author" class="form-control" placeholder="First Name">
 	        </div>
         </div>
         <div class="row">
 	        <div class="col">
-	          <input type="text" class="form-control" placeholder="Last Name">
+	          <input type="text" class="form-control mt-2" placeholder="Last Name">
 	        </div>
 	      </div>
 	      <div class="row">
 	      	<div class="col">
-            <label for="pub-year">Year Published</label>
+            <label class="mt-2" for="pub-year">Year Published</label>
 	          <input type="text" id="pub-year" class="form-control" placeholder="Year">
 	        </div>
          </div>
-         <input type="submit" value="Submit">
+         <input class="mt-2" type="submit" value="Submit">
 
 	      </form>
       </div>
     </div>
-  </body>
-</html>
+{% endblock content %}

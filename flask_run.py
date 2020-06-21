@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-
+import pyodbc
 from pyodbctest import MSDBconnection
 
 app = Flask(__name__)
@@ -19,9 +19,9 @@ def home():
 def about():
     return render_template('about.html', title = 'About')
 
-@app.route('/page2')
+@app.route('/book-list')
 def page2():
-    return render_template("page2.html")
+    return render_template("book-list.html")
 
 @app.route('/add-book')
 def add_book():
