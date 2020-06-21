@@ -35,24 +35,24 @@ posts = [
         'date_posted': '21 June, 2020'
     }
 ]
-# { %
-# for column in columns %}
-#
-# < td > {{row[0][loop.index - 1]}} < / td >
-#
-# { % endfor %}
+
 
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template("homepage.html",posts=posts,)
+    nwind = MSDBconnection()
+    results = nwind.sql_query("SELECT * FROM books")
+    return render_template("homepage.html",posts=posts,list = results)
 
 @app.route('/about')
 def about():
+
     return render_template('about.html', title = 'About')
 
 @app.route('/book-list')
-def page2():
+def bookList():
+    nwind = MSDBconnection()
+    results = nwind.sql_query("SELECT * FROM books")
     return render_template("book-list.html", list=results,columns=columns)
 
 @app.route('/add-book')
@@ -66,4 +66,4 @@ def index():
 
 
 if( __name__ == '__main__'):
-    app.run(host='0.0.0.0')
+    app.run(host='127.0.0.1')
