@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 nwind = MSDBconnection()
-results = nwind.sql_query("SELECT * FROM google_books_1299")
+results = nwind.sql_query("SELECT * FROM books")
 list=[results.fetchone()]
 
 posts = [

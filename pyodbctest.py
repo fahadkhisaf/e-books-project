@@ -5,7 +5,7 @@ import pyodbc
 class MSDBconnection():
 
     # Should establish connection with any DB we have in MSsql
-    def __init__(self, database = 'e-books_db',server = 'localhost',username = 'root',password = 'ssss'):
+    def __init__(self, database = 'e-books-db',server = 'localhost',username = 'root',password = 'ssss'):
         # 1) DB server connection variables
         self.server = server
         self.database = database
@@ -30,5 +30,5 @@ class MSDBconnection():
 
 nwind = MSDBconnection()
 
-results = nwind.sql_query("SELECT * FROM google_books_1299")
+results = nwind.sql_query("SELECT * FROM books")
 
