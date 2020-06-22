@@ -49,12 +49,13 @@ def home():
 
     nwind = MSDBconnection()
     results = nwind.sql_query("SELECT * FROM books")
+
     return render_template("homepage.html",posts=posts,list = results)
 
 @app.route('/about')
 def about():
 
-    return render_template('about.html', title = 'About')
+    return render_template('about.html', title = 'About',posts=posts)
 
 @app.route('/book-list')
 def bookList():

@@ -6,6 +6,16 @@
 	width: 100%;
 
 }
+.sub-container{
+    background-color: #002244;
+
+}
+.tab-cont{
+    color: white;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  color: #B3995D;
+}
 h1{
 	color: white;
 }

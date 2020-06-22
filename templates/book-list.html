@@ -8,7 +8,8 @@
     {% set list2 = list %}
     {% set col = columns %}
     <div class="this">
-        <div class="table-wrapper-scroll-y my-custom-scrollbar rounded">
+        <div class="sub-container">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar rounded">
             <table class="table table-striped table-hover  ">
           <thead class="thead-dark">
             <tr>
@@ -20,7 +21,7 @@
               <th scope="col">Date Published</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="tab-cont">
             {% for row in list2 %}
                 <tr>
                 {% for column in col %}
@@ -34,7 +35,7 @@
           </tbody>
         </table>
         </div>
-
+        </div>
     </div>
 
 
