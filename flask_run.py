@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template ,request
 import pyodbc
 from pyodbctest import MSDBconnection
 
@@ -37,9 +37,16 @@ posts = [
 ]
 
 
-@app.route('/')
-@app.route('/home')
+@app.route('/my-func', methods=['GET','POST'])
+def my_formpost():
+    vari = request.form['variable']
+    return render_template("search-res.html",variable=vari, list=results)
+
+
+@app.route('/', methods=['GET','POST'])
+@app.route('/home', methods=['GET','POST'])
 def home():
+
     nwind = MSDBconnection()
     results = nwind.sql_query("SELECT * FROM books")
     return render_template("homepage.html",posts=posts,list = results)

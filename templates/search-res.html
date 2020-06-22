@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+    <title>Home</title>
+    <link rel="stylesheet" href="static/style2.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <div class="this">
+        {% set num = [] %}
+        {% for post in list %}
+            {% if post[1].count(variable) ==1 %}
+
+            <h1 class="d-none">{{ num.append(1) }}</h1>
+            <article class="media content-section rounded ">
+                    <div class="media-body">
+                     <div class="article-metadata ">
+                       <a class="mr-2" href="#">ID: {{ post.0 }}</a>
+                       <small class="text-muted">Author: {{ post.2 }}</small>
+                     </div>
+                     <h2><a class="article-title" href="#">Title: {{ post.1 }}</a></h2>
+                     <p class="article-content bg-dark">Pages: {{ post.3 }}</p>
+                    </div>
+                </article>
+            {% endif %}
+
+        {% endfor %}
+        <div class="alert alert-primary" role="alert">
+          Found {{num|length}} results for {{variable}}
+        </div>
+
+
+    </div>
+
+{% endblock content %}
